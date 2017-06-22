@@ -1,0 +1,57 @@
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>Carrusel</title>
+	</head>
+ 	<body color ="#FFFFFF">
+ 		<h2 align="center">Carrusel de imagenes</h2>
+ 		<!--Creamos un tabla-->
+		<table width="40%" border="1" align="center">
+			<tr>
+
+			<td width="20%" align="right" height="200">
+				<font color="#0033CC">
+				<b> <a href="javascript:cambio(-1)">Atrás</a> </b>
+				</font>
+			</td>
+
+			<td align="center" width="48%" height="247">
+			<img id="centro" src="k1.jpg" height="170">
+			</td>
+
+			<td width="20%" height="200">
+				<font color="#0033CC">
+				<b> <a href="javascript:cambio(1)">Avance</a> </b>
+				</font>
+			</td>
+
+			</tr>
+		</table>
+
+</body>
+<script type="text/javascript">
+	var lista = new Array('1.jpg', '2.jpg', '3.jpg' , '4.jpg','5.jpg','6.jpg','7.jpg');
+	var contador = 0;
+	function cambio(a)
+	{
+
+    var tamaño = lista.length;
+    //alert(tamaño);
+	contador+= a;
+	if(contador<0){
+		contador=(lista.length-1);
+        		document.images.centro.src = lista[contador];
+	}else if(contador>=lista.length){
+		contador=0;
+				document.images.centro.src = lista[contador];
+
+	} else{
+		document.images.centro.src = lista[contador];		
+	}
+
+
+
+	}
+			
+</script>
+</html>
